@@ -1,46 +1,113 @@
-package com.example.layoutscarnaval1
-
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.background
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.layoutscarnaval1.ui.theme.LayoutsCarnaval1Theme
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Divider
+import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.runtime.remember
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            LayoutsCarnaval1Theme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+@Composable
+fun BlackBackgroundScreen() {
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black)
+            .padding(16.dp)
+    ) {
+        Text(
+            text = "Carnaval",
+            color = Color.White,
+            modifier = Modifier.padding(16.dp),
+            style = TextStyle(
+                fontWeight = FontWeight.Bold,
+                fontSize = 15.sp
+            )
+        )
+
+        Text(
+            text = "Title",
+            color = Color.White,
+            modifier = Modifier.offset(x = (-13).dp),
+            style = TextStyle(
+                fontSize = 17.sp
+            )
+        )
+
+        Text(
+            text = "Status",
+            color = Color.White,
+            modifier = Modifier
+                .padding(vertical = 85.dp)
+                .offset(x = (-13).dp),
+            style = TextStyle(
+                fontSize = 18.sp
+            )
+        )
+
+        Text(
+            text = "Priority",
+            color = Color.White,
+            modifier = Modifier
+                .offset(x = (-13).dp),
+            style = TextStyle(
+                fontSize = 18.sp
+            )
+        )
+
+        Text(
+            text = "Time and Date",
+            color = Color.White,
+            modifier = Modifier
+                .padding(vertical = 90.dp)
+                .offset(x = (-13).dp),
+            style = TextStyle(
+                fontSize = 18.sp
+            )
+        )
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun BlueWaterLine() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+
+        Spacer(modifier = Modifier.height(60.dp))
+
+        Divider(
+            color = Color(0xFF00FFFF),
+            thickness = 1.5.dp,
+            modifier = Modifier
+                .fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(80.dp))
+
+        Divider(
+            color = Color(0xFF00FFFF),
+            thickness = 1.5.dp,
+            modifier = Modifier
+                .fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+    }
 }
 
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun GreetingPreview() {
-    LayoutsCarnaval1Theme {
-        Greeting("Android")
-    }
+fun PreviewBlackBackgroundScreen() {
+    BlackBackgroundScreen()
+    BlueWaterLine()
 }
